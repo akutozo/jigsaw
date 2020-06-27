@@ -1,27 +1,25 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Establish variables for the course to run efficiently.
-
 //Provide a user interface that is fair and challenging.
-
 //Reward users who successfully navigate these chellenges.
-
 //Give only what is deserving to those who do not.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
