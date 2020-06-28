@@ -39,7 +39,7 @@ const questions = [
             { text: 'answer 4', correct: false}
         ]
     }
-]
+] 
 
 
 // var timerEl = document.getElementById('countdown');
