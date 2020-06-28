@@ -8,12 +8,15 @@ let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
 
+
+
+
+
 function startGame() {
- console.log('Started');
  startButton.classList.add('hidden')
  shuffledQuestions = questions.sort(() => Math.random() - .5)
  currentQuestionIndex = 0
- questionContainerElement.classList.remove('hidden')
+//  questionContainerElement.classList.remove('hidden')
  nextQuestion()
 }
 
@@ -22,8 +25,8 @@ function nextQuestion() {
 }
 
 function showQuestion() {
-    // questionElement.innerText = question.question
-    // console.log(question.question);
+    questionElement.innerText = question.question
+    console.log(question.question);
 }
 
 const questions = [
