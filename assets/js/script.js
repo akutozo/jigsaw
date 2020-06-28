@@ -24,7 +24,7 @@ function nextQuestion() {
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
-function showQuestion() {
+function showQuestion(question) {
     questionElement.innerText = question.question
     console.log(question.question);
 }
