@@ -10,15 +10,22 @@
 
     <header>
         <div id="scores" class="highscores">Best of the Best</div>
-        <div id="countdown" class="gameover"></div>
-
+        <div id="countdown" class="timer"></div>
     </header>
-
-    <main class ="container">
-        <h1 class="welcome">Hello, I want to play a game.</h1>
-        <button id="start_game">Let the Games Begin</button>
-    </main>
-
+    <div class="container">
+        <div id="question-container" class="hidden">
+            <div id="question">Hello, I want to play a game.</div>
+            <div id="answer-btn" class="btn-grid">
+                <button class="btn">Prompt 1</button>
+                <button class="btn">Prompt 2</button>
+                <button class="btn">Prompt 3</button>
+                <button class="btn">Prompt 4</button>
+            </div>
+            <div class="controller">
+                <button id="start_game" class="start-btn btn">Let the Games Begin</button>
+            </div>
+        </div>
+    </div>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
