@@ -9,6 +9,7 @@ let shuffledQuestions, currentQuestionIndex
 startButton.addEventListener('click', startGame)
 
 
+
 function startGame() {
  startButton.classList.add('hidden')
  shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -21,6 +22,7 @@ function startGame() {
 function nextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
+  console.log("nextQuestion is Running")
 }
 
 function showQuestion(question) {
@@ -35,10 +37,34 @@ function showQuestion(question) {
       button.addEventListener('click', selectAnswer)
       answerButtonsElement.appendChild(button)
     })
+}
+
+function resetState() {
+  clearStatusClass(document.body)
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
+  console.log("resetState is running.")
+}
 
 function selectAnswer(e) {
-      
+  const selectedButton = e.target
+  const correct = selectedButton.dataset.correct
+  var correctumundo = correct;
+  console.log(correctumundo)
+  if (correctumundo == "true") {
+
+  } else {
+    var currentTime = document.getElementById('countdown').innerHTML;
+    document.getElementById('countdown').innerHTML = currentTime - 10;
+    console.log(currentTime)
+  }
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    currentQuestionIndex++
+    nextQuestion()
+  } else {
+    
+  }
 }
 
 function setStatusClass(element, correct) {
@@ -55,13 +81,6 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
 }
 
-function resetState() {
-  clearStatusClass(document.body)
-  while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-  }
-}
-
 const questions = [
     {
         question: 'What is the answer?',
@@ -71,7 +90,34 @@ const questions = [
             { text: 'answer 3', correct: false},
             { text: 'answer 4', correct: false}
         ]
-    }
+    },
+    {
+      question: 'What is your disfunction?',
+      answers: [
+          { text: 'Problem 1', correct: true},
+          { text: 'Problem 2', correct: false},
+          { text: 'Problem 3', correct: false},
+          { text: 'Problem 4', correct: false}
+      ]
+  },
+  {
+    question: 'What is your name?',
+    answers: [
+        { text: 'John', correct: true},
+        { text: 'Jane', correct: false},
+        { text: 'Joe', correct: false},
+        { text: 'Josephina Poppenfoose ', correct: false}
+    ]
+  },
+  {
+    question: 'Cats or Dogs?',
+    answers: [
+        { text: 'Cats', correct: true},
+        { text: 'Cats', correct: false},
+        { text: 'Cats', correct: false},
+        { text: 'Cats', correct: false}
+    ]
+  }
 ] 
 
 
