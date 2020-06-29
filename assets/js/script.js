@@ -47,6 +47,15 @@ function resetState() {
   console.log("resetState is running.")
 }
 
+// function incorrect() {
+//   var currentTime = document.getElementById('countdown').innerHTML;
+//   document.getElementsByClassName('btn').addEventListener('click', function() {
+//     currentTime -= 5;
+//     document.getElementById('countdown').innerHTML=currentTime;
+//   });
+//   console.log(currentTime)
+// }
+
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
@@ -55,9 +64,10 @@ function selectAnswer(e) {
   if (correctumundo == "true") {
 
   } else {
-    var currentTime = document.getElementById('countdown').innerHTML;
-    document.getElementById('countdown').innerHTML = currentTime - 10;
-    console.log(currentTime)
+    // var currentTime = document.getElementById('countdown').innerHTML;
+    // currentTime -= 10;
+    // document.getElementById('countdown').innerHTML = currentTime;
+     console.log(currentTime)
   }
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     currentQuestionIndex++
@@ -125,10 +135,10 @@ function countdown() {
     var timeLeft = 100;
     var timeInterval = setInterval(function() {
       if (timeLeft > 1) {
-        timerEl.textContent = timeLeft + ' seconds remaining';
+        timerEl.textContent = timeLeft;
         timeLeft--;
       } else if (timeLeft === 1) {
-        timerEl.textContent = timeLeft + ' second remaining';
+        timerEl.textContent = timeLeft;
         timeLeft--;
       } else {
         timerEl.textContent = '';
@@ -140,18 +150,6 @@ function countdown() {
 
 
 
-
-
-
-
-
-
-
-
-//Establish variables for the course to run efficiently.
-//Provide a user interface that is fair and challenging.
-//Reward users who successfully navigate these chellenges.
-//Give only what is deserving to those who do not.
 
 
 
