@@ -1,5 +1,4 @@
 const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-btn')
@@ -10,19 +9,18 @@ let shuffledQuestions, currentQuestionIndex
 startButton.addEventListener('click', startGame)
 
 
-
-
-
 function startGame() {
  startButton.classList.add('hidden')
  shuffledQuestions = questions.sort(() => Math.random() - .5)
  currentQuestionIndex = 0
 //  questionContainerElement.classList.remove('hidden')
  nextQuestion()
+ countdown()
 }
 
 function nextQuestion() {
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+  resetState()
+  showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
 function showQuestion(question) {
@@ -39,9 +37,30 @@ function showQuestion(question) {
     })
   }
 
-  function selectAnswer(e) {
+function selectAnswer(e) {
       
+}
+
+function setStatusClass(element, correct) {
+  clearStatusClass(element)
+  if (correct) {
+    element.classList.add('correct')
+  } else {
+    element.classList.add('wrong')
   }
+}
+
+function clearStatusClass(element) {
+  element.classList.remove('correct')
+  element.classList.remove('wrong')
+}
+
+function resetState() {
+  clearStatusClass(document.body)
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+  }
+}
 
 const questions = [
     {
@@ -72,10 +91,6 @@ function countdown() {
       }
     }, 1000);
   }
-
-
-
-startBtn.onclick = countdown;
 
 
 
