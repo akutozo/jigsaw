@@ -1,8 +1,9 @@
 const startButton = document.getElementById('start-btn')
-// const nextButton = document.getElementById('next-btn')
+const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+const answerButtonsElement = document.getElementById('answer-btn')
+var timerEl = document.getElementById('countdown');
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -26,8 +27,21 @@ function nextQuestion() {
 
 function showQuestion(question) {
     questionElement.innerText = question.question
-    console.log(question.question);
-}
+    question.answers.forEach(answer => {
+      const button = document.createElement('button')
+      button.innerText = answer.text
+      button.classList.add('btn')
+      if (answer.correct) {
+        button.dataset.correct = answer.correct
+      }
+      button.addEventListener('click', selectAnswer)
+      answerButtonsElement.appendChild(button)
+    })
+  }
+
+  function selectAnswer(e) {
+      
+  }
 
 const questions = [
     {
@@ -42,29 +56,26 @@ const questions = [
 ] 
 
 
-// var timerEl = document.getElementById('countdown');
-// var startBtn = document.getElementById('start_game');
-
-// function countdown() {
-//     var timeLeft = 100;
-//     var timeInterval = setInterval(function() {
-//       if (timeLeft > 1) {
-//         timerEl.textContent = timeLeft + ' seconds remaining';
-//         timeLeft--;
-//       } else if (timeLeft === 1) {
-//         timerEl.textContent = timeLeft + ' second remaining';
-//         timeLeft--;
-//       } else {
-//         timerEl.textContent = '';
-//         clearInterval(timeInterval);
-//         displayMessage();
-//       }
-//     }, 1000);
-//   }
+function countdown() {
+    var timeLeft = 100;
+    var timeInterval = setInterval(function() {
+      if (timeLeft > 1) {
+        timerEl.textContent = timeLeft + ' seconds remaining';
+        timeLeft--;
+      } else if (timeLeft === 1) {
+        timerEl.textContent = timeLeft + ' second remaining';
+        timeLeft--;
+      } else {
+        timerEl.textContent = '';
+        clearInterval(timeInterval);
+        displayMessage();
+      }
+    }, 1000);
+  }
 
 
 
-// startBtn.onclick = countdown;
+startBtn.onclick = countdown;
 
 
 
