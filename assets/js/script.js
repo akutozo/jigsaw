@@ -18,6 +18,8 @@ function startGame() {
  currentQuestionIndex = 0
  nextQuestion()
  countdown()
+ score = 0;
+ time = 60;
 }
 
 function nextQuestion() {
@@ -69,7 +71,7 @@ function selectAnswer(e) {
   } else {
     score = score + time;
     console.log("Bonus Points awarded for early completion. Your new score is " + score)
-    endGame()
+    time = 0;
   }
 }
 
@@ -172,6 +174,7 @@ function endGame() {
     console.log("Your total score is " + score);
     localStorage.setItem("highscores", score);
     localStorage.setItem("name", name);
+    startButton.classList.remove('hidden')
 }
 
 // function highscore() {
