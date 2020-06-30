@@ -6,6 +6,7 @@ var timerEl = document.getElementById('countdown');
 
 let shuffledQuestions, currentQuestionIndex
 let score = 0;
+let time = 60;
 
 startButton.addEventListener('click', startGame)
 
@@ -23,7 +24,7 @@ function startGame() {
 function nextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
-  console.log("nextQuestion is Running")
+  
 }
 
 function showQuestion(question) {
@@ -45,7 +46,7 @@ function resetState() {
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
-  console.log("resetState is running.")
+  
 }
 
 // function incorrect() {
@@ -64,12 +65,12 @@ function selectAnswer(e) {
   console.log(correctumundo)
   if (correctumundo == "true") {
     score++
-    console.log(score)
+    console.log("User Score is now: " + score)
   } else {
     // var currentTime = document.getElementById('countdown').innerHTML;
-    // currentTime -= 10;
+    time -= 10; 
     // document.getElementById('countdown').innerHTML = currentTime;
-    //  console.log(currentTime)
+    console.log("User has been penalized 10 seconds. Remaining time is " + time + " seconds")
   }
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     currentQuestionIndex++
@@ -134,14 +135,13 @@ const questions = [
 
 
 function countdown() {
-    var timeLeft = 100;
     var timeInterval = setInterval(function() {
-      if (timeLeft > 1) {
-        timerEl.textContent = timeLeft;
-        timeLeft--;
-      } else if (timeLeft === 1) {
-        timerEl.textContent = timeLeft;
-        timeLeft--;
+      if (time > 1) {
+        timerEl.textContent = time;
+        time--;
+      } else if (time === 1) {
+        timerEl.textContent = time;
+        time--;
       } else {
         timerEl.textContent = '';
         clearInterval(timeInterval);
