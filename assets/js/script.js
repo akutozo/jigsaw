@@ -67,7 +67,7 @@ function selectAnswer(e) {
     // var currentTime = document.getElementById('countdown').innerHTML;
     // currentTime -= 10;
     // document.getElementById('countdown').innerHTML = currentTime;
-     console.log(currentTime)
+    //  console.log(currentTime)
   }
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     currentQuestionIndex++
