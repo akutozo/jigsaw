@@ -93,39 +93,39 @@ function clearStatusClass(element) {
 
 const questions = [
     {
-        question: 'What is the answer?',
+        question: 'What does var mean?',
         answers: [
-            { text: 'answer 1', correct: true},
-            { text: 'answer 2', correct: false},
-            { text: 'answer 3', correct: false},
-            { text: 'answer 4', correct: false}
+            { text: 'Variable', correct: true},
+            { text: 'Varisity Football', correct: false},
+            { text: 'Varis', correct: false},
+            { text: 'Varginia', correct: false}
         ]
     },
     {
-      question: 'What is your disfunction?',
+      question: 'What is the DOM?',
       answers: [
-          { text: 'Problem 1', correct: true},
-          { text: 'Problem 2', correct: false},
-          { text: 'Problem 3', correct: false},
-          { text: 'Problem 4', correct: false}
+          { text: 'A Programming Interface for HTML Documents', correct: true},
+          { text: 'A Programming Interface for CSS Documents', correct: false},
+          { text: 'A Programming Interface for CSI Documents', correct: false},
+          { text: 'A Programming Interface for CIA  Documents', correct: false}
       ]
   },
   {
-    question: 'What is your name?',
+    question: 'Can Javascript add and remove CSS classes?',
     answers: [
-        { text: 'John', correct: true},
-        { text: 'Jane', correct: false},
-        { text: 'Joe', correct: false},
-        { text: 'Josephina Poppenfoose ', correct: false}
+        { text: 'Yes', correct: true},
+        { text: 'No', correct: false},
+        { text: 'Maybe', correct: false},
+        { text: 'So', correct: false}
     ]
   },
   {
-    question: 'Cats or Dogs?',
+    question: 'What is an array?',
     answers: [
-        { text: 'Cats', correct: true},
-        { text: 'Cats', correct: false},
-        { text: 'Cats', correct: false},
-        { text: 'Cats', correct: false}
+        { text: 'An ordered collection of items', correct: true},
+        { text: 'A collectors edition of items', correct: false},
+        { text: 'A limited edition pre-order of items', correct: false},
+        { text: 'Offler, the Crocodile God', correct: false}
     ]
   }
 ] 
