@@ -152,14 +152,23 @@ function countdown() {
       } else {
         timerEl.textContent = '';
         clearInterval(timeInterval);
-        displayMessage();
+        endGame();
       }
     }, 1000);
   }
 
-function displayMessage() {
-  alert("You are out of time!");
-  // highscore()
+function endGame() {
+  var name = "";
+  
+    while (name === "" || name === null) {
+        name = prompt("Game over. Tell me, what was your name again?");
+      }
+  
+    console.log("Your name is " + name);
+    console.log("Your total score is " + score);
+    localStorage.setItem("highscore", score);
+    localStorage.setItem("name", name);
+
 }
 
 // function highscore() {
