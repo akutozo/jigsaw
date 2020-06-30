@@ -5,6 +5,7 @@ const answerButtonsElement = document.getElementById('answer-btn')
 var timerEl = document.getElementById('countdown');
 
 let shuffledQuestions, currentQuestionIndex
+let score = 0;
 
 startButton.addEventListener('click', startGame)
 
@@ -62,7 +63,8 @@ function selectAnswer(e) {
   var correctumundo = correct;
   console.log(correctumundo)
   if (correctumundo == "true") {
-
+    score++
+    console.log(score)
   } else {
     // var currentTime = document.getElementById('countdown').innerHTML;
     // currentTime -= 10;
