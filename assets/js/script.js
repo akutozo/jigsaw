@@ -23,7 +23,7 @@ function startGame() {
 function nextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
-  console.log(currentQuestionIndex)
+  console.log("The current index question is " + currentQuestionIndex)
   
 }
 
@@ -53,19 +53,23 @@ function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
   var correctumundo = correct;
-  console.log(correctumundo)
   if (correctumundo == "true") {
+    console.log("The answer was correct!")
     score++
     console.log("User Score is now: " + score)
+    console.log(correctumundo)
   } else {
-    time -= 10; 
+    console.log("The answer was false!")
+    time -= 15; 
     console.log("User has been penalized 10 seconds. Remaining time is " + time + " seconds")
   }
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     currentQuestionIndex++
     nextQuestion()
   } else {
-    
+    score = score + time;
+    console.log("Bonus Points awarded for early completion. Your new score is " + score)
+    endGame()
   }
 }
 
@@ -161,14 +165,13 @@ function endGame() {
   var name = "";
   
     while (name === "" || name === null) {
-        name = prompt("Game over. Tell me, what was your name again?");
+        name = prompt("Your final score is " + score + ". Tell me, what was your name again?");
       }
   
     console.log("Your name is " + name);
     console.log("Your total score is " + score);
-    localStorage.setItem("highscore", score);
+    localStorage.setItem("highscores", score);
     localStorage.setItem("name", name);
-
 }
 
 // function highscore() {
