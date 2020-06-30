@@ -130,6 +130,24 @@ const questions = [
         { text: 'A limited edition pre-order of items', correct: false},
         { text: 'Offler, the Crocodile God', correct: false}
     ]
+  },
+  {
+    question: 'What does the C in CSS stand for?',
+    answers: [
+        { text: 'Cascading', correct: true},
+        { text: 'Castlevania', correct: false},
+        { text: 'Casein', correct: false},
+        { text: 'Casper the Friendly Ghost', correct: false}
+    ]
+  },
+  {
+    question: 'What does the H in HTML stand for?',
+    answers: [
+        { text: 'Hypertext', correct: true},
+        { text: 'Hyperfocus', correct: false},
+        { text: 'Hypochondria', correct: false},
+        { text: 'Hyundai', correct: false}
+    ]
   }
 ] 
 
