@@ -96,7 +96,7 @@ const questions = [
         question: 'What does var mean?',
         answers: [
             { text: 'Variable', correct: true},
-            { text: 'Varisity Football', correct: false},
+            { text: 'Varsity Football', correct: false},
             { text: 'Varis', correct: false},
             { text: 'Varginia', correct: false}
         ]
