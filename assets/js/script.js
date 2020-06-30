@@ -175,6 +175,9 @@ function endGame() {
     localStorage.setItem("highscores", score);
     localStorage.setItem("name", name);
     startButton.classList.remove('hidden')
+    document.getElementsByClassName("btn").disabled = true;
+    
+    
 }
 
 // function highscore() {
