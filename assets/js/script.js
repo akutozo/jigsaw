@@ -16,7 +16,6 @@ function startGame() {
  startButton.classList.add('hidden')
  shuffledQuestions = questions.sort(() => Math.random() - .5)
  currentQuestionIndex = 0
-//  questionContainerElement.classList.remove('hidden')
  nextQuestion()
  countdown()
 }
@@ -24,6 +23,7 @@ function startGame() {
 function nextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
+  console.log(currentQuestionIndex)
   
 }
 
@@ -49,15 +49,6 @@ function resetState() {
   
 }
 
-// function incorrect() {
-//   var currentTime = document.getElementById('countdown').innerHTML;
-//   document.getElementsByClassName('btn').addEventListener('click', function() {
-//     currentTime -= 5;
-//     document.getElementById('countdown').innerHTML=currentTime;
-//   });
-//   console.log(currentTime)
-// }
-
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
@@ -67,9 +58,7 @@ function selectAnswer(e) {
     score++
     console.log("User Score is now: " + score)
   } else {
-    // var currentTime = document.getElementById('countdown').innerHTML;
     time -= 10; 
-    // document.getElementById('countdown').innerHTML = currentTime;
     console.log("User has been penalized 10 seconds. Remaining time is " + time + " seconds")
   }
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
@@ -149,7 +138,7 @@ const questions = [
         { text: 'Hyundai', correct: false}
     ]
   }
-] 
+]
 
 
 function countdown() {
@@ -167,6 +156,15 @@ function countdown() {
       }
     }, 1000);
   }
+
+function displayMessage() {
+  alert("You are out of time!");
+  // highscore()
+}
+
+// function highscore() {
+
+// }
 
 
 
